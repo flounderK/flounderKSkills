@@ -59,8 +59,9 @@ With `--scope project` the same files are written under `./.claude`, `./.kiro`, 
 
 - **post-change-validation** — a soft code-review pass to run after an LLM or human
   changes code. Reviews every changed file for robustness, correctness, completeness,
-  duplication, testability, abstraction, performance, documentation, dependency hygiene,
-  steering compliance, hacks/band-aids, and readability; runs the test suite and linters
+  duplication, testability, abstraction, correct placement (right layer/module/file),
+  performance, documentation, dependency hygiene, steering compliance, hacks/band-aids,
+  and readability; runs the test suite and linters
   and fixes what it can, flags the rest.
 - **tech-debt-assessment** — a comprehensive, evidence-based audit of an *entire*
   codebase. Maps the code, runs analysis tooling (churn, complexity, duplication,

@@ -29,7 +29,7 @@ If a tool isn't installed, note the gap in the report's limitations section rath
 ### Phase 3 — Assess across every dimension
 Inspect the codebase against each dimension below. For each, capture concrete findings with locations and evidence.
 
-1. **Architecture & structural debt** — weak module boundaries, tight coupling, circular dependencies, layering violations, god files/classes, orphaned/dead modules, inconsistent architectural patterns across the codebase.
+1. **Architecture & structural debt** — weak module boundaries, tight coupling, circular dependencies, layering violations, **misplaced code** (logic living in the wrong layer/module/file — e.g. backend or domain logic in the frontend, transport concerns leaking into business logic, catch-all "utils" dumping grounds), god files/classes, orphaned/dead modules, inconsistent architectural patterns across the codebase.
 2. **Code quality & complexity** — cyclomatic-complexity hotspots, over-long functions/files, deep nesting, dead code, commented-out code, magic numbers, unclear naming.
 3. **Duplication & reinvention** — the same logic implemented in multiple places; functionality reimplemented that already exists in the codebase or in a dependency/standard library.
 4. **Testing debt** — coverage gaps on critical paths, missing test types (unit/integration/e2e), flaky or slow tests, skipped/disabled tests, tests that assert nothing, and code that is untestable by design (deep mocking required, hardwired to its production environment).

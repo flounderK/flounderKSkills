@@ -44,26 +44,33 @@ The code should sit at the right level of abstraction — neither too concrete n
 - Are there concrete implementations that should sit behind an interface because they represent a decision that could change (storage backend, external service, algorithm choice)?
 - Are there interfaces with only one implementation and no foreseeable second one? That indirection may not be earning its keep.
 
-### 7. Performance
+### 7. Correct placement and organization
+Does the new code live where it belongs?
+- Is each piece of code in the right layer, module, and file for its responsibility — e.g. backend/domain logic must not land in the frontend, HTTP/transport concerns must not leak into business logic, and shared utilities belong in the shared location, not copied into a caller?
+- Does the placement respect the project's established structure and boundaries (its directory conventions, module ownership, and dependency direction)? A change must not introduce a dependency that points the wrong way (e.g. a lower layer importing from a higher one).
+- Is the code in the most specific correct location — added to the existing module that already owns this concept, rather than dropped into an unrelated file, a catch-all "utils"/"misc" dump, or a brand-new file that duplicates an existing module's purpose?
+- Would someone looking for this behavior find it where they'd reasonably expect it? If the code's location contradicts its responsibility, move it to the module/file that owns that responsibility.
+
+### 8. Performance
 Look for accidentally introduced O(n²) loops, unbounded allocations, missing pagination, and resource leaks (file handles, connections, sockets). Will the change degrade under realistic load, not just in the demo case?
 
-### 8. Documentation
+### 9. Documentation
 Are public functions, non-obvious logic, and configuration changes documented? Are the README or inline docs updated to match the new behavior? Stale docs that now contradict the code are a defect.
 
-### 9. Dependency hygiene
+### 10. Dependency hygiene
 If new dependencies were added:
 - Are they pinned to exact versions?
 - Are they actively maintained?
 - Do they duplicate something already in the project?
 - Do the names look legitimate — verify this is not typosquatting (a lookalike name for a popular package)?
 
-### 10. Steering compliance
+### 11. Steering compliance
 Does the change violate any project or global steering rules, conventions, or constraints — e.g. `CLAUDE.md`, `AGENTS.md`, `.kiro/steering/**`, `.cursor/rules`, `CONTRIBUTING`, `.editorconfig`, or linter/formatter configs? For each violation, identify the specific rule it broke and fix it.
 
-### 11. No hacks or band-aids
+### 12. No hacks or band-aids
 Is every fix addressing the root cause, not papering over a symptom? Are there workarounds, special-case conditionals, or temporary patches that should be proper solutions instead? If a fix looks like a hack, identify the underlying problem and propose (or implement) the real fix.
 
-### 12. Readability and maintainability
+### 13. Readability and maintainability
 Could a competent reader of this language understand what the code does without relying on comments, docs, or the function name? They should be able to.
 - Reject deeply nested `if`/loops unless there is an exceptionally good, stated reason.
 - Prioritize guard clauses and flat control flow. Deep nesting usually signals code that can be flattened by inverting a conditional or extracting a well-named, reusable function.
