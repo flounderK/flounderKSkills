@@ -1,0 +1,8 @@
+# Metadata for the post-change-validation prompt.
+# Flat key: value pairs (single line values). Consumed by ../../install.sh.
+
+name: post-change-validation
+title: Post-Change Validation
+description: Soft code-review pass run after an LLM or human changes code. Reviews every changed file for robustness, correctness, completeness, duplication, testability, abstraction, performance, docs, dependency hygiene, steering compliance, hacks, and readability; runs the test suite and linters and fixes what it can.
+# model: leave blank to inherit the interface default. Set e.g. claude-opus-4-8 to pin.
+model:
