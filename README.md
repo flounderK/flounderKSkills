@@ -1,0 +1,2 @@
+# flounderKSkills
+Skills for AI 
