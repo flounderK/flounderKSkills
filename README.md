@@ -61,10 +61,11 @@ With `--scope project` the same files are written under `./.claude`, `./.kiro`, 
   changes code. Reviews every changed file for robustness, correctness, completeness,
   duplication, testability, abstraction, correct placement (right layer/module/file),
   performance, documentation, dependency hygiene, steering compliance, hacks/band-aids,
-  and readability; runs the test suite and linters
+  readability, and idiomatic design (patterns / anti-patterns / code smells); runs the
+  test suite and linters
   and fixes what it can, flags the rest.
 - **tech-debt-assessment** — a comprehensive, evidence-based audit of an *entire*
   codebase. Maps the code, runs analysis tooling (churn, complexity, duplication,
-  dependency/vulnerability audits, coverage), and inventories debt across 14 dimensions,
+  dependency/vulnerability audits, coverage), and inventories debt across 15 dimensions,
   then produces a prioritized `TECH_DEBT_ASSESSMENT.md` with severity/effort scoring and
   a remediation roadmap. Reports only — it does not modify code.

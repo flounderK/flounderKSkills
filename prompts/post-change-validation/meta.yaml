@@ -3,6 +3,6 @@
 
 name: post-change-validation
 title: Post-Change Validation
-description: Soft code-review pass run after an LLM or human changes code. Reviews every changed file for robustness, correctness, completeness, duplication, testability, abstraction, correct placement, performance, docs, dependency hygiene, steering compliance, hacks, and readability; runs the test suite and linters and fixes what it can.
+description: Soft code-review pass run after an LLM or human changes code. Reviews every changed file for robustness, correctness, completeness, duplication, testability, abstraction, correct placement, performance, docs, dependency hygiene, steering compliance, hacks, readability, and idiomatic design (patterns, anti-patterns, code smells); runs the test suite and linters and fixes what it can.
 # model: leave blank to inherit the interface default. Set e.g. claude-opus-4-8 to pin.
 model:

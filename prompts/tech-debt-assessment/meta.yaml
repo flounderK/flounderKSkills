@@ -3,6 +3,6 @@
 
 name: tech-debt-assessment
 title: Tech Debt Assessment
-description: Comprehensive, evidence-based technical-debt assessment of an entire codebase. Maps the code, runs analysis tooling, and inventories debt across architecture, complexity, duplication, testing, dependencies, security, performance, docs, consistency, type safety, CI/CD, operability, data/schema, and TODO markers; produces a prioritized report with a remediation roadmap. Reports only — does not modify code.
+description: Comprehensive, evidence-based technical-debt assessment of an entire codebase. Maps the code, runs analysis tooling, and inventories debt across architecture, complexity, duplication, testing, dependencies, security, performance, docs, consistency, design patterns/anti-patterns, type safety, CI/CD, operability, data/schema, and TODO markers; produces a prioritized report with a remediation roadmap. Reports only — does not modify code.
 # model: leave blank to inherit the interface default. Set e.g. claude-opus-4-8 to pin.
 model:

@@ -75,6 +75,14 @@ Could a competent reader of this language understand what the code does without 
 - Reject deeply nested `if`/loops unless there is an exceptionally good, stated reason.
 - Prioritize guard clauses and flat control flow. Deep nesting usually signals code that can be flattened by inverting a conditional or extracting a well-named, reusable function.
 
+### 14. Design patterns, idioms, and anti-patterns
+Does the change use the right, well-established solutions and avoid the known-bad ones?
+- Is the code idiomatic for its language and framework — following the conventions a fluent practitioner expects, and using standard-library/built-in constructs instead of hand-rolled equivalents?
+- Where a recognized design pattern fits the problem, is it applied correctly and completely — not a half-implemented, misnamed, or misapplied version of it?
+- Does it avoid forcing a pattern where a simpler construct would do? Over-engineering — a pattern for its own sake, a framework where a function suffices (the "golden hammer") — is itself a defect.
+- Does it avoid introducing anti-patterns and code smells? Watch specifically for: god objects/classes, singleton or global-state abuse, spaghetti control flow, primitive obsession, long parameter lists, boolean/flag parameters that select behavior, feature envy, inappropriate intimacy between modules, shotgun surgery, message chains (train wrecks), and speculative generality.
+- For every smell or anti-pattern you find, name it explicitly, explain why it is a problem in this context, and give the idiomatic refactor.
+
 ## Active checks — you must run these, not just read
 
 ### Tests

@@ -38,11 +38,12 @@ Inspect the codebase against each dimension below. For each, capture concrete fi
 7. **Performance & scalability debt** — accidental O(n²) or worse, N+1 queries, missing indexes/pagination/caching, unbounded allocations, and resource leaks (file handles, connections, sockets) that will bite under real load.
 8. **Documentation & knowledge debt** — missing or stale README/architecture/API docs, undocumented decisions and tribal knowledge, comments that now contradict the code, weak onboarding.
 9. **Consistency & convention debt** — divergent styles or patterns for the same task, inconsistent naming, mixed paradigms, configuration sprawl.
-10. **Type safety & correctness debt** — untyped or `any`-typed code, suppressed type/lint errors, unchecked nulls, swallowed exceptions, ignored error returns.
-11. **Build, tooling & CI/CD debt** — slow or fragile builds, manual release steps, missing or weak CI, absent linters/formatters, flaky pipelines, non-reproducible builds.
-12. **Operational & observability debt** — poor error handling, insufficient logging/metrics/tracing, hardcoded configuration, missing health checks, no graceful degradation.
-13. **Data & schema debt** — schema drift, missing or ad-hoc migrations, no backup/restore story, data-integrity risks.
-14. **Explicit debt markers** — an inventory of `TODO`/`FIXME`/`HACK` markers, temporary workarounds, and feature flags that have quietly become permanent.
+10. **Design-pattern, idiom & anti-pattern debt** — non-idiomatic code that fights the language/framework or hand-rolls what the standard library provides; misapplied or half-implemented design patterns; patterns forced where a simpler construct fits (over-engineering, the "golden hammer"); and recurring anti-patterns and code smells across the codebase — god objects, singleton/global-state abuse, spaghetti control flow, primitive obsession, long parameter lists, feature envy, inappropriate intimacy, shotgun surgery, message chains, speculative generality — noting where they cluster.
+11. **Type safety & correctness debt** — untyped or `any`-typed code, suppressed type/lint errors, unchecked nulls, swallowed exceptions, ignored error returns.
+12. **Build, tooling & CI/CD debt** — slow or fragile builds, manual release steps, missing or weak CI, absent linters/formatters, flaky pipelines, non-reproducible builds.
+13. **Operational & observability debt** — poor error handling, insufficient logging/metrics/tracing, hardcoded configuration, missing health checks, no graceful degradation.
+14. **Data & schema debt** — schema drift, missing or ad-hoc migrations, no backup/restore story, data-integrity risks.
+15. **Explicit debt markers** — an inventory of `TODO`/`FIXME`/`HACK` markers, temporary workarounds, and feature flags that have quietly become permanent.
 
 ## Scoring and prioritization
 
@@ -62,7 +63,7 @@ Structure the report as:
 1. **Executive summary** — overall health in a few sentences, the top 3–5 risks, and the headline metrics (size, coverage, dependency/vulnerability counts, hotspot count).
 2. **Codebase overview** — size, languages, structure, and what the Phase-2 tooling revealed.
 3. **Prioritized findings** — the ranked "fix these first" list, each with severity, effort, priority, location/evidence, the concrete problem, and a recommended remediation. Quick wins called out separately.
-4. **Detailed inventory by dimension** — findings grouped under the 14 dimensions above, each with location and evidence.
+4. **Detailed inventory by dimension** — findings grouped under the 15 dimensions above, each with location and evidence.
 5. **Remediation roadmap** — a phased plan: quick wins first, then strategic initiatives, sequenced by dependency and leverage.
 6. **Coverage & limitations** — what you assessed, what you couldn't (tools missing, areas not reachable), and your confidence level per dimension.
 
