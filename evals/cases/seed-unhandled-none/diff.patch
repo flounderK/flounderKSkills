@@ -1,0 +1,7 @@
+--- a/user.py
++++ b/user.py
+@@ -3,4 +3,5 @@ def display_name(user):
+     """Human-readable name for a user record."""
+-    return user.get("name", "anonymous").title()
++    name = user.get("name")
++    return name.title()

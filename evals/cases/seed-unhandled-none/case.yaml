@@ -1,0 +1,13 @@
+id: seed-unhandled-none
+prompt: post-change-validation
+source: synthetic seed
+should_flag: true
+description: Refactor of display_name to read the name into a local variable first.
+expected_findings:
+  - location: "user.py — display_name"
+    category: robustness
+    description: >-
+      user.get("name") returns None when the key is absent, and None.title()
+      raises AttributeError. The previous code passed a default ("anonymous") to
+      .get, so this change introduces an unhandled-None crash. Restore a default
+      or guard against None before calling .title().

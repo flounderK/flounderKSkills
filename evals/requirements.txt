@@ -1,0 +1,3 @@
+# Eval harness dependencies. Install with: pip install -r evals/requirements.txt
+anthropic>=0.40        # Messages API client; a recent version enables structured outputs
+PyYAML>=6.0            # case.yaml parsing

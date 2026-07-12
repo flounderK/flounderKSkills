@@ -1,0 +1,6 @@
+id: seed-clean-refactor
+prompt: post-change-validation
+source: synthetic seed
+should_flag: false
+description: Extract the currency formatting into a reusable format_currency helper.
+expected_findings: []

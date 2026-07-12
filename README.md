@@ -5,6 +5,18 @@ an interface-agnostic form, and `install.sh` wraps it into the native format for
 tool — so the same prompt works across Claude Code, Kiro CLI, and any tool that can
 take a raw markdown prompt.
 
+```mermaid
+flowchart LR
+    P["prompts/NAME/prompt.md<br/>+ meta.yaml"] --> INS["install.sh"]
+    INS -->|slash command| CC["~/.claude/commands/NAME.md"]
+    INS -->|subagent| CA["~/.claude/agents/NAME.md"]
+    INS -->|custom agent JSON| KI["~/.kiro/agents/NAME.json"]
+    INS -->|raw prompt| GEN["~/.ai-prompts/NAME.md"]
+```
+
+For the full picture — install pipeline, prompt logic, and the eval harness — see
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
 ## Layout
 
 ```

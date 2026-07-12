@@ -1,0 +1,12 @@
+--- a/checkout.py
++++ b/checkout.py
+@@ -5,5 +5,9 @@ from decimal import Decimal
+ def cart_total_label(cart):
+     total = sum(item.price for item in cart.items)
+-    return f"${total:.2f}"
++    return format_currency(total)
++
++
++def format_currency(amount):
++    """Format a numeric amount as a USD string."""
++    return f"${amount:.2f}"

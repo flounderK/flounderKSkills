@@ -1,0 +1,12 @@
+id: seed-offbyone
+prompt: post-change-validation
+source: synthetic seed
+should_flag: true
+description: Change to the pagination end-index calculation.
+expected_findings:
+  - location: "pagination.py — page_items, end calculation"
+    category: correctness
+    description: >-
+      end = start + per_page + 1 returns one item too many, so consecutive pages
+      overlap by one element (the last item of page N reappears as the first of
+      page N+1). The correct slice end is start + per_page.
