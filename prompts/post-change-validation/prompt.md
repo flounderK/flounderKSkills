@@ -69,6 +69,7 @@ Does the change violate any project or global steering rules, conventions, or co
 
 ### 12. No hacks or band-aids
 Is every fix addressing the root cause, not papering over a symptom? Are there workarounds, special-case conditionals, or temporary patches that should be proper solutions instead? If a fix looks like a hack, identify the underlying problem and propose (or implement) the real fix.
+If you need a paragraph-long comment to justify why the workaround is ok, the code is wrong - fix the code.
 
 ### 13. Readability and maintainability
 Could a competent reader of this language understand what the code does without relying on comments, docs, or the function name? They should be able to.
